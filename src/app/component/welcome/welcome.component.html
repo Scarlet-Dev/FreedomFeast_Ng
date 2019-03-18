@@ -23,7 +23,15 @@
 <!-- <app-header></app-header>
 <app-footer></app-footer> -->
 <div>
-
+    <slideshow [height]="'400px'"
+    [minHeight]="'525px'"
+    [autoPlay]="true"
+    [showArrows]="true"
+    [imageUrls]="imagesUrl"
+    [lazyLoad]="imagesUrl?.length > 1"
+    [autoPlayWaitForLazyLoad]="true">
+  
+</slideshow>
 </div>
 
 <div>

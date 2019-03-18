@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { SlideshowModule } from 'ng-simple-slideshow';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { UsersModule } from './component/users.module';
@@ -34,9 +36,10 @@ import { ProviderRegsitrationComponent } from './component/register/provider-reg
     UsersModule,
     BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SlideshowModule
   ],
-  exports:[
+  exports: [
     BrowserModule
   ],
   providers: [],

@@ -21,6 +21,6 @@ export class LoginComponent implements OnInit {
 
   onSubmit(){
     this.submitted=true
-    this.router.navigate(['/users'])
+    this.router.navigate(['/users/regular/'])
   }
 }

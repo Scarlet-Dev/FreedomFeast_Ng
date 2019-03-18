@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { RegularComponent } from './users/regular/regular.component';
 import { ProvidersComponent } from './users/providers/providers.component';
 import { OrdersComponent } from './orders/orders.component';
-import { MenuComponent } from './menu/menu.component';
+// import { MenuComponent } from './menu/menu.component';
 import { CartComponent } from './cart/cart.component';
 // import { SettingsComponent } from './settings/settings.component';
 import { CheckoutComponent } from './checkout/checkout.component';
@@ -17,9 +17,9 @@ const UserRoutes: Routes = [
       {
         path: 'regular', component: RegularComponent, canActivateChild: [true], children: [
           { path: 'cart', component: CartComponent },
-          { path: '', component: MenuComponent },
+          // { path: 'menu', component: MenuComponent },
           // { path: 'settings', component: SettingsComponent },
-          { path: 'order-history', component: OrdersComponent },
+          { path: 'orders-history', component: OrdersComponent },
           { path: 'checkout', component: CheckoutComponent },
           { path: 'confirmation', component: ConfirmationComponent }
         ]

@@ -8,11 +8,17 @@ import { Router } from '@angular/router'
 })
 export class WelcomeComponent implements OnInit {
 
-  isProvider=true
+  isProvider=true;
+  public imagesUrl;
   constructor(private router:Router) { }
 
   ngOnInit() {
-
+    this.imagesUrl = [
+      './assets/ab.jpg',
+      //'IMAGE_URL1.jpg',
+      './assets/aa.jpg',
+      './assets/ac.jpg'
+      ];
   }
 
   onUserClick(){
