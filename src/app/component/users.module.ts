@@ -20,6 +20,8 @@ import { CartComponent } from './cart/cart.component';
 import { OrderHistoryComponent } from './order-history/order-history.component';
 import { SettingsComponent } from './settings/settings.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { ConfirmationComponent } from './confirmation/confirmation.component';
+import { ProviderMenuComponent } from './provider-menu/provider-menu.component'
 
 
 @NgModule({
@@ -36,7 +38,9 @@ import { CheckoutComponent } from './checkout/checkout.component';
     CartComponent,
     OrderHistoryComponent,
     SettingsComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    ConfirmationComponent,
+    ProviderMenuComponent
   ],
   imports: [
     CommonModule,

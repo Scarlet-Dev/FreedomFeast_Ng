@@ -13,6 +13,8 @@ import { PageNotFoundComponent } from './component/page-not-found/page-not-found
 import { WelcomeComponent } from './component/welcome/welcome.component';
 import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
+import { UserRegsitrationComponent } from './component/register/user-regsitration/user-regsitration.component';
+import { ProviderRegsitrationComponent } from './component/register/provider-regsitration/provider-regsitration.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { FooterComponent } from './component/footer/footer.component';
     WelcomeComponent,
     PageNotFoundComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    UserRegsitrationComponent,
+    ProviderRegsitrationComponent
   ],
   imports: [
     BrowserModule,
