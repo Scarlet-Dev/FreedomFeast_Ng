@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, Form } from '@angular/forms'
 
 @Component({
   selector: 'app-user-regsitration',
@@ -9,6 +10,7 @@ export class UserRegsitrationComponent implements OnInit {
   serviceTest: any = [];
   submitted = false;
   questions = ['What is the name of your First School?', 'What is your pet Name?']
+  userForm:FormGroup;
 
   constructor() { }
 

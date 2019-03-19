@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { SlideshowModule } from 'ng-simple-slideshow';
 
+import { FeastFreedomApiService } from './services/feast-freedom-api.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { UsersModule } from './component/users.module';
@@ -42,7 +43,7 @@ import { ProviderRegsitrationComponent } from './component/register/provider-reg
   exports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [FeastFreedomApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

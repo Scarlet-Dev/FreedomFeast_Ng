@@ -1,8 +1,11 @@
 img {
     border-radius: 50%;
   }
-
-  .button {
+.tabel{
+  border:1px solid black;
+  width:64%" class="table
+}
+  /* .button {
     border: none;
     padding: 10px;
     color: #fff;
@@ -12,4 +15,40 @@ img {
     border-radius: 4px;
     margin-left: 15px;
     background-color: coral;
+  } */
+
+
+  .confirm_title{
+    padding-top: 6px;
+    height: 40px;
+    color: white;
+    background-color: coral;
+    text-align: center;
+    width: 866px;
   }
+
+.confirm_message{
+  font-family: sans-serif;
+  font-size: initial;
+  font-weight: underline;
+  font-style: italic;
+}
+
+h3{
+  margin-right: 98px;
+  padding-top: 6px;
+  height: 40px;
+  color: white;
+  margin-left: -252px;
+  background-color: coral;
+  text-align: center;
+  width: 148%;
+  background-color: cadetblue;
+}
+
+ .confirm_icon{
+  padding-left: 55px;
+  width: 122px;
+  margin-top: 23px;
+  height: 92px;
+ }

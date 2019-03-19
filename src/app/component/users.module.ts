@@ -14,7 +14,6 @@ import { UsersComponent } from './users.component';
 import { KitchenComponent } from './kitchen/kitchen.component';
 import { OrdersComponent } from './orders/orders.component';
 import { KitchenCardsComponent } from './kitchen-cards/kitchen-cards.component';
-import { UserToolbarComponent } from './user-toolbar/user-toolbar.component';
 import { MenuComponent } from './menu/menu.component';
 import { CartComponent } from './cart/cart.component';
 import { OrderHistoryComponent } from './order-history/order-history.component';
@@ -27,13 +26,11 @@ import { ToolbarComponent } from './toolbar/toolbar.component'
 
 @NgModule({
   declarations: [
-    UserToolbarComponent,
     KitchenComponent,
     OrdersComponent,
     RegularComponent,
     UsersComponent,
     KitchenCardsComponent,
-    UserToolbarComponent,
     ProvidersComponent,
     MenuComponent,
     CartComponent,

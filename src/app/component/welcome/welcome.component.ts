@@ -8,20 +8,23 @@ import { Router } from '@angular/router'
 })
 export class WelcomeComponent implements OnInit {
 
-  isProvider=true;
+  isProvider = true;
   public imagesUrl;
-  constructor(private router:Router) { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     this.imagesUrl = [
-      './assets/ab.jpg',
+      './assets/Custom_Cheese_homepage.jpg',
       //'IMAGE_URL1.jpg',
-      './assets/aa.jpg',
-      './assets/ac.jpg'
-      ];
+      './assets/food1.jpg',
+      './assets/Homepage_pepperoni.jpg',
+      './assets/Peak_homepage.jpg',
+      './assets/Pmobile_homepage.jpg',
+      './assets/Spark_homepage.jpg'
+    ]
   }
 
-  onUserClick(){
+  onUserClick() {
     this.router.navigate(['/register/:isProvider'])
   }
 

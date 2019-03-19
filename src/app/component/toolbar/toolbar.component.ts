@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./toolbar.component.css']
 })
 export class ToolbarComponent implements OnInit {
-
+  Title;
   constructor() { }
 
   ngOnInit() {
+    this.Title='Main Page'
   }
 
 }

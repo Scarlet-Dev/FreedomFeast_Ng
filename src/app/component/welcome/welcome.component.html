@@ -1,51 +1,47 @@
-<!-- <div class='slideshow-container'>
-  <div class='my-Slides fade'>
-    <img src='https://goinswriter.com/wp-content/uploads/2013/12/chef-660x624.jpg' placeholder='carousel picture 1'>
-    <div class='caption'>Welcome to Feast Freedom!</div>
-  </div>
-  <div class='my-Slides fade'>
-    <img src='https://goinswriter.com/wp-content/uploads/2013/12/chef-660x624.jpg' placeholder='carousel picture 1'>
-    <div class='caption'>Welcome to Feast Freedom!</div>
-  </div>
-  <div class='my-Slides fade'>
-    <img src='https://goinswriter.com/wp-content/uploads/2013/12/chef-660x624.jpg' placeholder='carousel picture 1'>
-    <div class='caption'>Welcome to Feast Freedom!</div>
-  </div>
-  <div class='my-Slides fade'>
-    <img src='https://goinswriter.com/wp-content/uploads/2013/12/chef-660x624.jpg' placeholder='carousel picture 1'>
-    <div class='caption'>Welcome to Feast Freedom!</div>
-  </div>
-  <div class='my-Slides fade'>
-    <img src='https://goinswriter.com/wp-content/uploads/2013/12/chef-660x624.jpg' placeholder='carousel picture 1'>
-    <div class='caption'>Welcome to Feast Freedom!</div>
-  </div>
-</div> -->
-<!-- <app-header></app-header>
-<app-footer></app-footer> -->
-<div>
-    <slideshow [height]="'400px'"
-    [minHeight]="'525px'"
-    [autoPlay]="true"
-    [showArrows]="true"
-    [imageUrls]="imagesUrl"
-    [lazyLoad]="imagesUrl?.length > 1"
-    [autoPlayWaitForLazyLoad]="true">
-  
-</slideshow>
-</div>
+<mat-toolbar class="toolbar">
+  <mat-toolbar-row class="toolbar-row">
+    <span>Freedom Feast</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<section>
+  <slideshow [height]="'400px'" [minHeight]="'350px'" [autoPlay]="true" [showArrows]="true" [imageUrls]="imagesUrl"
+    [lazyLoad]="imagesUrl?.length > 1" [autoPlayWaitForLazyLoad]="true">
 
-<div>
-  <img>
-  <span>
-    <button matButton routerLink='/login'>User Login</button>
-    <button matButton routerLink='/register'>User Registration</button>
-  </span>
-</div>
+  </slideshow>
 
-<div>
-  <div>
-    <img>
-    <p>Want to share your culinary skills with the neighbour? Sign up and become a Freedom Feast Provider</p>
-  </div>
-  <button matButton (click)='onUserClick()'>Provider Registration</button>
-</div>
+</section>
+
+<br />
+<table>
+  <tr>
+    <td>
+      <a mat-raised-button routerLink='/register/user' class="button1" mat-button-item style="height:30px;">User Registration</a>
+    </td>
+    <td>
+      <a mat-raised-button routerLink='/login' class="button1" style="height:30px;width: 126px;">Login</a>
+    </td>
+  </tr>
+  <br />
+  <tr>
+    <td>
+      <h3 style="font-size: 2em;
+        letter-spacing: -1px; margin: 0;">Tips, Tricks and Trends for Restaurants</h3><br />
+      <img src="./assets/HomepagePromo_Foodcentric.jpg" width="645px">
+    </td>
+    <td>
+      <h3 style="font-size: 2em;
+        letter-spacing: -1px; margin: 0;">This Just In
+      </h3><br />Here are the latest products we've been cooking up.<br /><br />
+      <img src="./assets/just_in_sm_assoluti_flour.jpg" width="200px" class="img1">&nbsp;&nbsp;
+      <img src="./assets/just_in_sm_empires_treasure_crabmeat.jpg" width="200px" class="img1">&nbsp;&nbsp;
+      <img src="./assets/just_in_sm_piancone_meatballs.jpg" width="200px" class="img1"><br /><br /><br />
+      <a mat-raised-button routerLink='/register/provider' class="button1" style="height:30px;">Provider Registration</a>
+    </td>
+  </tr>
+</table>
+<!-- autoPlayInterval=3333  font-size: 2.5em;
+    letter-spacing: -1px;
+    margin: 0 -->
+<!-- <td>
+  <img src="C:\FreedomFeast\ff-access\src\assets\12.jpg" >
+  </td> -->
