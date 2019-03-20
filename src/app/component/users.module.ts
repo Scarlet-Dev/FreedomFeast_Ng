@@ -21,7 +21,9 @@ import { SettingsComponent } from './settings/settings.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { ProviderMenuComponent } from './provider-menu/provider-menu.component';
-import { ToolbarComponent } from './toolbar/toolbar.component'
+import { ToolbarComponent } from './toolbar/toolbar.component';
+import { PlaceOrderComponent } from './place-order/place-order.component';
+import { CheckoutListComponent } from './checkout-list/checkout-list.component'
 
 
 @NgModule({
@@ -39,7 +41,9 @@ import { ToolbarComponent } from './toolbar/toolbar.component'
     CheckoutComponent,
     ConfirmationComponent,
     ProviderMenuComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    PlaceOrderComponent,
+    CheckoutListComponent
   ],
   imports: [
     CommonModule,

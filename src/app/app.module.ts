@@ -30,7 +30,7 @@ import { ProviderRegsitrationComponent } from './component/register/provider-reg
     HeaderComponent,
     FooterComponent,
     UserRegsitrationComponent,
-    ProviderRegsitrationComponent
+    ProviderRegsitrationComponent,
   ],
   imports: [
     BrowserModule,

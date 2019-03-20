@@ -1,11 +1,5 @@
-.mat-toolbar{
-    background-color: #FB4040;
-    align-self: center;
-    font-size: 42px;
-}
-.mat-toolbar-row{
-    color: whitesmoke;
-    text-align: center;
+span{
+    width: 100%;
 }
 section {
     position: relative;
@@ -55,13 +49,12 @@ section {
 
   .button1 {
     color: black;
-    border: 2px solid #FB4040 ;
-    padding: 22px 250px;
+    padding: 0px 200px;
     text-align: center;
     text-decoration: none;
-    /* display: inline-block; */
+    display: inline-block;
     font-size: 16px;
-    margin-left: 20px;
+    margin-left: 100px;
     font-family: Verdana,sans-serif;
     
     line-height: 1.5;

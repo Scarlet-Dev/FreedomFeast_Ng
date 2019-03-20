@@ -1,19 +1,42 @@
-h2{
-    background-color: lightgray;
-    border-style: ridge;
+span{
+    width: 100%;
 }
 .container{
+    align-content: justify;
     position: absolute;
-    padding: 150px;
-    top:50px;
-    left: 350px;
-    border-style: black 10px;
-    /* color: white; */
-    height: auto;
+    left: 38%;
+    top: 20%;
+}
+form{
+    border: black solid 0.5px;
+    /* border-left: black solid 0.5px;
+    border-right: black solid 0.5px;
+    border-bottom: black solid 0.5px; */
+    border-radius: 5%;
+}
+h2{
+    background-color: #fbfbfb;
+    /* border: black solid 0.5px; */
     text-align: center;
 }
-.login-button{
-    top:5px;
-    color: beige;
-    border: 0;
+.login-in{
+    border:black solid 0.5px;
+}
+.username{
+    position: relative;
+    text-align: center;
+    padding-bottom: 5px;
+    width: auto;
+}
+.password{
+    position: relative;
+    text-align: center;
+    padding-bottom: 5px;
+    width: auto;
+}
+.submit{
+    position:relative;
+    left: 40%;
+    white-space: nowrap;
+    width: auto;
 }

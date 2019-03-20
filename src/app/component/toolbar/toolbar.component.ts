@@ -10,7 +10,6 @@ export class ToolbarComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.Title='Main Page'
   }
 
 }

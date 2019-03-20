@@ -1,25 +1,36 @@
+<mat-toolbar color='primary'>
+  <mat-toolbar-row>
+    <span></span>Freedom Feast<span></span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
 <div class='container'>
-  <h2>Log In</h2>
   <form class='log-in'>
+    <h2>Log In</h2>
     <div class='username'>
-      <span>
-        <input type="text" class='' name='username' required [(ngModel)]="model.username" placeholder="Username">
-      </span>
+      <mat-form-field>
+        <input matInput type="text" class='username' name='username' required [(ngModel)]="model.username"
+          placeholder="Username">
+      </mat-form-field>
     </div>
 
     <div class='password'>
-      <span>
-        <input type='password' class='' name='password' required [(ngModel)]='model.password' placeholder="Password">
-      </span>
+      <mat-form-field>
+        <input matInput type='password' class='password' name='password' required [(ngModel)]='model.password'
+          placeholder="Password">
+      </mat-form-field>
     </div>
 
     <div class='checkbox'>
-      <input type='checkbox' [(ngModel)]='model.stayLoggedIn' name='isLoggedIn'><label
-        for='stayLoggedIn'>Please check if you want to stay loggend in</label>
+      <!-- <mat-form-field> -->
+      <!-- <input type='checkbox' class='checkbox-input' [(ngModel)]='model.stayLoggedIn' name='isLoggedIn'><label
+          for='isLoggedIn' class='checkbox-label'>Please check if you want to stay loggend in</label> -->
+      <mat-checkbox>Please check if you want to stay logged in</mat-checkbox>
+      <!-- </mat-form-field> -->
     </div>
 
     <div class='login-button'>
-    <input type='submit' (click)='onSubmit()'>
+      <button mat-stroked-button class='submit' type='submit' (click)='onSubmit()' isRoundButton=true>Log In</button>
     </div>
   </form>
 </div>
