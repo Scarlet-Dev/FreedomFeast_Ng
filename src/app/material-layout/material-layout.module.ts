@@ -4,10 +4,11 @@ import { PortalModule } from '@angular/cdk/portal';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { CdkStepperModule } from '@angular/cdk/stepper';
 import { CdkTableModule } from '@angular/cdk/table';
-import { CdkTreeModule, NestedTreeControl } from '@angular/cdk/tree';
+import { CdkTreeModule } from '@angular/cdk/tree';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { MatFormFieldModule } from "@angular/material/form-field";
 import {
   MatAutocompleteModule,
   MatBadgeModule,
@@ -44,10 +45,8 @@ import {
   MatToolbarModule,
   MatTooltipModule,
   MatTreeModule,
-  MatTreeNestedDataSource
 }
   from '@angular/material';
-import { MatFormFieldModule } from "@angular/material/form-field";
 
 
 @NgModule({
@@ -99,8 +98,6 @@ import { MatFormFieldModule } from "@angular/material/form-field";
     CdkTreeModule,
     FormsModule,
     ReactiveFormsModule,
-    MatTreeNestedDataSource,
-    NestedTreeControl
   ]
 })
 export class MaterialLayoutModule { }

@@ -15,8 +15,6 @@ import { LoginComponent } from './component/login/login.component';
 import { RegisterComponent } from './component/register/register.component';
 import { PageNotFoundComponent } from './component/page-not-found/page-not-found.component';
 import { WelcomeComponent } from './component/welcome/welcome.component';
-import { HeaderComponent } from './component/header/header.component';
-import { FooterComponent } from './component/footer/footer.component';
 import { UserRegsitrationComponent } from './component/register/user-regsitration/user-regsitration.component';
 import { ProviderRegsitrationComponent } from './component/register/provider-regsitration/provider-regsitration.component';
 
@@ -27,8 +25,6 @@ import { ProviderRegsitrationComponent } from './component/register/provider-reg
     RegisterComponent,
     WelcomeComponent,
     PageNotFoundComponent,
-    HeaderComponent,
-    FooterComponent,
     UserRegsitrationComponent,
     ProviderRegsitrationComponent,
   ],
@@ -45,7 +41,7 @@ import { ProviderRegsitrationComponent } from './component/register/provider-reg
   exports: [
     BrowserModule
   ],
-  providers: [FeastFreedomApiService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -53,9 +53,6 @@ import { CheckoutListComponent } from './checkout-list/checkout-list.component'
   exports: [
     MaterialLayoutModule
   ],
-  providers: [
-    LocalStorageService,
-    FeastFreedomApiService
-  ]
+  providers: []
 })
 export class UsersModule { }
