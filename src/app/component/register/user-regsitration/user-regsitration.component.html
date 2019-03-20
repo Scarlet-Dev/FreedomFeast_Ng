@@ -1,125 +1,32 @@
-<mat-toolbar>
-  <mat-toolbar-row>Freedom Feast</mat-toolbar-row>
+<mat-toolbar color='primary'>
+  <mat-toolbar-row>
+    <span></span>Freedom Feast<span></span>
+  </mat-toolbar-row>
 </mat-toolbar>
-<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
-  <table style="width:40%;text-align: left;">
-    <tr>
-      <td style="width:50%;">
 
-        <label for="firstname" style="width:500px;">First Name</label>
-      </td>
-      <td>
-        <input type="text" id="firstname" class="form-control" name="firstname" required
-          [(ngModel)]="userForm.firstname" #input="ngModel">
-        <div style="color:red" *ngIf="submitted && !userForm.controls.firstname?.valid">
-          <div [hidden]="!userForm.controls.firstname.errors.required">
-            First Name is required
-          </div>
-        </div>
-      </td>
+<div class='user-form'>
+  <form [formGroup]='userForm'>
+    <h3>User Registration</h3>
 
+    <div>
+      <mat-form-field>
+        <input formControlName='username' placeholder="Username" matInput='text' required>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input formControlName='email' placeholder="Email" matInput='email' required>
+      </mat-form-field>
+    </div>
 
-    </tr>
+    <div>
+      <mat-form-field>
+        <input formControlName='password' placeholder="Password" matInput="password" required>
+      </mat-form-field>
+    </div>
 
-    <tr>
-      <td style="width:50%;">
-
-        <label for="lastname">Last Name</label>
-      </td>
-      <td>
-        <input type="text" class="form-control" name="lastname" required [(ngModel)]="userForm.lastname"
-          #input="ngModel">
-        <!-- appForbiddenName="bob" -->
-        <div style="color:red" *ngIf="submitted && !userForm.controls.lastname?.valid">
-          Last Name is required
-        </div>
-
-      </td>
-    </tr>
-    <!-- <div style="color:red" *ngIf="!userForm.controls.lastname?.valid" >
-        <div [hidden]="!userForm.controls.lastname.errors.required">
-            lastname Name is required
-            </div>
-        </div> -->
-    <tr>
-      <td style="width:50%;">
-
-        <label for="email">Email</label>
-      </td>
-      <td>
-        <input type="text" class="form-control" name="email" required [(ngModel)]="userForm.email" email="true"
-          #input="ngModel">
-        <div style="color:red" *ngIf="submitted && !userForm.controls.email?.valid">
-          Enter Valid email
-        </div>
-        <!-- <div style="color:red" *ngIf="submitted && !userForm.controls.firstname?.valid" >
-  <div [hidden]="!userForm.controls.firstname.errors.required">
-  First Name is required
-      </div>
-  </div> -->
-
-      </td>
-    </tr>
-    <tr>
-      <td style="width:50%;">
-
-        <label for="password">Password</label>
-      </td>
-      <td>
-        <input type="text" type="password" class="form-control mb-4" class="form-control" name="password" required
-          [(ngModel)]="userForm.password" #input="ngModel">
-        <div style="color:red" *ngIf="submitted && !userForm.controls.password?.valid">
-          Password is required
-        </div>
-
-      </td>
-    </tr>
-    <tr>
-      <td style="width:50%;">
-
-        <label for="Question">Secuirity Question</label>
-      </td>
-      <td>
-        <select name="singleSelect" required [(ngModel)]="userForm.singleSelect" #input="ngModel" style="width: 173px;">
-
-          <!-- <option value="">---Please select---</option> not selected / blank option -->
-          <option value="0">What is the name of your First School?</option>
-          <option value="1">What is your pet Name?</option>
-        </select>
-        <div style="color:red" *ngIf="submitted && !userForm.controls.singleSelect?.valid">
-          Question is required
-        </div>
-
-      </td>
-    </tr>
-    <tr>
-      <td style="width:50%;">
-
-        <label for="answer">Your Answer</label>
-      </td>
-      <td>
-        <input type="text" class="form-control" name="answer" class="form-control mb-4" required
-          [(ngModel)]="userForm.answer" #input="ngModel">
-        <div style="color:red" *ngIf="submitted && !userForm.controls.answer?.valid">
-          Answer is required
-        </div>
-
-      </td>
-    </tr><br /><br />
-    <tr>
-      <td>
-        <div class="form-group">
-          <button type="submit" (click)="Sub()" class="button">Submit</button>
-          <button type="button" (click)="userForm.reset()" class="button">Cancel</button>
-        </div>
-        <!-- Default form login -->
-      </td>
-    </tr>
-
-  </table>
-
-
-  <!-- Default form login -->
-
-  <!-- <pre>{{userForm.value|json}}</pre> -->
-</form>
+    <div>
+      <button mat-raised-button class='submit-button' (click)='onSubmit(userForm)' color='accent'>Submit</button>
+    </div>
+  </form>
+</div>

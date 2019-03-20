@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, Form } from '@angular/forms'
+import { FormGroup, FormControl } from '@angular/forms'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-user-regsitration',
@@ -9,18 +10,20 @@ import { FormGroup, Form } from '@angular/forms'
 export class UserRegsitrationComponent implements OnInit {
   serviceTest: any = [];
   submitted = false;
-  questions = ['What is the name of your First School?', 'What is your pet Name?']
-  userForm:FormGroup;
 
-  constructor() { }
+  userForm = new FormGroup({
+    username: new FormControl(),
+    email: new FormControl(),
+    password: new FormControl()
+  });
+
+  constructor(private user_route: Router) { }
 
   ngOnInit() {
   }
+
   onSubmit(userForm) {
-    // this.uservice.getUsers(userForm.value);
-  }
-  Sub(): void {
-    this.submitted = true;
-    console.log(this.submitted);
+    console.log(userForm);
+    this.user_route.navigateByUrl('login');
   }
 }
