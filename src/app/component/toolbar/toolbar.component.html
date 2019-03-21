@@ -1,6 +1,9 @@
 <mat-toolbar color='primary'>
   <mat-toolbar-row>
     <span></span>Freedom Feast<span></span>
-    <app-cart></app-cart>
+    <a mat-button routerLink='shopping-cart'>
+      <mat-icon matBadgeColor='accent' class='notify-icon' matBadge={{itemCount}} matBadgePosition='after above'>
+        shopping-cart</mat-icon>
+    </a>
   </mat-toolbar-row>
 </mat-toolbar>

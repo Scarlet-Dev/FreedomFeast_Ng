@@ -9,16 +9,27 @@ import { FeastFreedomApiService } from '../services/feast-freedom-api.service';
 
 import { UsersMainComponent } from "./users-main.component";
 import { KitchenProviderComponent } from './users/kitchen-provider/kitchen-provider.component';
+
 import { UserComponent } from './users/user/user.component';
-import { CardComponent } from './kitchen/card/card.component';
+import { CardComponent } from './users/user/kitchen/card/card.component';
+import { KitchenComponent } from './users/user/kitchen/kitchen.component';
+import { MenuComponent } from "./users/user/kitchen/menu/menu.component";
+import { CheckoutComponent } from './users/user/checkout/checkout.component';
+import { ConfirmationComponent } from './users/user/confirmation/confirmation.component';
+import { UserSettingsComponent } from './users/user/user-settings/user-settings.component';
 
 
 @NgModule({
   declarations: [
     UsersMainComponent,
     UserComponent,
-    KitchenProviderComponent,
+    UserSettingsComponent,
+    KitchenComponent,
     CardComponent,
+    MenuComponent,
+    CheckoutComponent,
+    ConfirmationComponent,
+    KitchenProviderComponent,
   ],
   imports: [
     CommonModule,
