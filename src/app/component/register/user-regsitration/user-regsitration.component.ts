@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms'
+import { FormGroup, FormControl, NgForm } from '@angular/forms'
 import { Router } from '@angular/router'
 
 @Component({
@@ -22,8 +22,9 @@ export class UserRegsitrationComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit(userForm) {
-    console.log(userForm);
+  onSubmit(user: NgForm) {
+    const value = user.value;
+    console.log(value);
     this.user_route.navigateByUrl('login');
   }
 }
