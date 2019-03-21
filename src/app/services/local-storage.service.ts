@@ -7,21 +7,25 @@ import { StorageService, LOCAL_STORAGE } from 'ngx-webstorage-service';
 export class LocalStorageService {
 
   STORAGE_KEY = "user_storage"
+  current_storage
 
   constructor (@Inject(LOCAL_STORAGE)private storage:StorageService) { }
 
-  public storageOnLocalStorage(username:String, password:string, token:string, isLogged:boolean):void{
-    const current_storage = this.storage.get(this.STORAGE_KEY) || []
+  public storageOnLocalStorage(username:String, token:any, isLogged:boolean):void{
+    this.current_storage = this.storage.get(this.STORAGE_KEY) || []
 
-    current_storage.push({
+    this.current_storage.push({
       user:username,
-      pass:password,
       token:token,
       Date:Date.now().toString,
       isLoggedIn:isLogged
     });
 
-    this.storage.set(this.STORAGE_KEY, current_storage)
+    this.storage.set(this.STORAGE_KEY, this.current_storage)
     console.log(this.storage.get(this.STORAGE_KEY) || 'Local storage is empty')
+  }
+
+  public clearStorage(){
+    this.storage.clear()
   }
 }

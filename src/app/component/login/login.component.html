@@ -1,36 +1,36 @@
-<mat-toolbar color='primary'>
-  <mat-toolbar-row>
-    <span></span>Freedom Feast<span></span>
-  </mat-toolbar-row>
-</mat-toolbar>
+<app-toolbar></app-toolbar>
 
-<div class='container'>
-  <form class='log-in'>
-    <h2>Log In</h2>
-    <div class='username'>
-      <mat-form-field>
-        <input matInput type="text" class='username' name='username' required [(ngModel)]="model.username"
-          placeholder="Username">
-      </mat-form-field>
-    </div>
+<div>
+  <form class='log-in' (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div class='container'>
+      <h2>Log In</h2>
+      <div class='username'>
+        <mat-form-field>
+          <input matInput type="email" name='email' required email placeholder="Email" ngModel #email='ngModel'>
+        </mat-form-field>
+        <mat-error class='email-hint' *ngIf='!email.valid && email.touched'>
+          Please enter a valid email address
+        </mat-error>
+      </div>
 
-    <div class='password'>
-      <mat-form-field>
-        <input matInput type='password' class='password' name='password' required [(ngModel)]='model.password'
-          placeholder="Password">
-      </mat-form-field>
-    </div>
+      <div class='password'>
+        <mat-form-field>
+          <input matInput type='password' name='password' required placeholder="Password" ngModel #password='ngModel'>
+        </mat-form-field>
+        <mat-error *ngIf="!password.valid && password.touched">
+          Please enter a valid password
+        </mat-error>
+      </div>
 
-    <div class='checkbox'>
-      <!-- <mat-form-field> -->
-      <!-- <input type='checkbox' class='checkbox-input' [(ngModel)]='model.stayLoggedIn' name='isLoggedIn'><label
-          for='isLoggedIn' class='checkbox-label'>Please check if you want to stay loggend in</label> -->
-      <mat-checkbox>Please check if you want to stay logged in</mat-checkbox>
-      <!-- </mat-form-field> -->
-    </div>
+      <div class='checkbox'>
+        <mat-checkbox name='providerLogin' ngModel #providerLogin='ngModel'>
+          Login as a Kitchen Provider?
+        </mat-checkbox>
+      </div>
 
-    <div class='login-button'>
-      <button mat-stroked-button class='submit' type='submit' (click)='onSubmit()' isRoundButton=true>Log In</button>
+      <div class='login-button'>
+        <button mat-stroked-button color='accent' isRoundButton=true [disabled]='!f.valid'>Log In</button>
+      </div>
     </div>
   </form>
 </div>

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { UsersModule } from './component/users.module';
+import { UsersMainModule } from "./component/users-main.module";
 
 import { LoginComponent } from './component/login/login.component';
 import { RegisterComponent } from './component/register/register.component';
@@ -19,12 +19,12 @@ const routes: Routes = [
       { path: 'provider', component: ProviderRegsitrationComponent }
     ]
   },
-  { path: 'users', loadChildren: () => UsersModule },
+  { path: 'users', loadChildren: () => UsersMainModule },
   { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { enableTracing: true }), UsersModule],
+  imports: [RouterModule.forRoot(routes, { enableTracing: true }), UsersMainModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

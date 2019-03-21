@@ -2,41 +2,43 @@ span{
     width: 100%;
 }
 .container{
-    align-content: justify;
-    position: absolute;
-    left: 38%;
-    top: 20%;
+    align-content: center;
+    position: relative;
+    /* left: 38%;
+    top: 20%; */
 }
 form{
     border: black solid 0.5px;
+    padding: 20px;
     /* border-left: black solid 0.5px;
     border-right: black solid 0.5px;
     border-bottom: black solid 0.5px; */
+    margin: fit-content;
     border-radius: 5%;
 }
 h2{
-    background-color: #fbfbfb;
+    /* background-color: #fbfbfb; */
     /* border: black solid 0.5px; */
     text-align: center;
-}
-.login-in{
-    border:black solid 0.5px;
 }
 .username{
     position: relative;
     text-align: center;
-    padding-bottom: 5px;
+    /* padding-bottom: 5px; */
     width: auto;
 }
 .password{
     position: relative;
     text-align: center;
-    padding-bottom: 5px;
+    /* padding-bottom: 5px; */
     width: auto;
 }
 .submit{
     position:relative;
     left: 40%;
-    white-space: nowrap;
-    width: auto;
+    width: fit-content;
+    margin: auto;
+}
+input.ng-invalid.ng-touched{
+    border: accent;
 }

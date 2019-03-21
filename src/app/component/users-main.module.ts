@@ -10,6 +10,7 @@ import { FeastFreedomApiService } from '../services/feast-freedom-api.service';
 import { UsersMainComponent } from "./users-main.component";
 import { KitchenProviderComponent } from './users/kitchen-provider/kitchen-provider.component';
 import { UserComponent } from './users/user/user.component';
+import { CardComponent } from './kitchen/card/card.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { UserComponent } from './users/user/user.component';
     UsersMainComponent,
     UserComponent,
     KitchenProviderComponent,
+    CardComponent,
   ],
   imports: [
     CommonModule,

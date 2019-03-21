@@ -8,6 +8,7 @@ import { ToolbarModule } from './component/toolbar/toolbar.module';
 import { MaterialLayoutModule } from './material-layout/material-layout.module';
 
 import { FeastFreedomApiService } from './services/feast-freedom-api.service';
+import { LocalStorageService } from './services/local-storage.service'
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './component/login/login.component';
@@ -39,7 +40,7 @@ import { ProviderRegsitrationComponent } from './component/register/provider-reg
   exports: [
     BrowserModule,
   ],
-  providers: [FeastFreedomApiService],
+  providers: [FeastFreedomApiService, LocalStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
