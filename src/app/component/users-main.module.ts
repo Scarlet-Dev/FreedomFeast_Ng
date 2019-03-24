@@ -15,6 +15,7 @@ import { CardComponent } from './users/user/kitchen/card/card.component';
 import { KitchenComponent } from './users/user/kitchen/kitchen.component';
 import { MenuComponent } from "./users/user/kitchen/menu/menu.component";
 import { CheckoutComponent } from './users/user/checkout/checkout.component';
+import { CartComponent } from './users/user/cart/cart.component'
 import { ConfirmationComponent } from './users/user/confirmation/confirmation.component';
 import { UserSettingsComponent } from './users/user/user-settings/user-settings.component';
 
@@ -27,6 +28,7 @@ import { UserSettingsComponent } from './users/user/user-settings/user-settings.
     KitchenComponent,
     CardComponent,
     MenuComponent,
+    CartComponent,
     CheckoutComponent,
     ConfirmationComponent,
     KitchenProviderComponent,

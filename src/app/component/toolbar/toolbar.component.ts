@@ -6,8 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./toolbar.component.css']
 })
 export class ToolbarComponent implements OnInit {
-  Title;
-  itemCount=0;
+  
   constructor() { }
 
   ngOnInit() {

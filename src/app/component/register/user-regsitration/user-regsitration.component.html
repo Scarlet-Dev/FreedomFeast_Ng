@@ -1,18 +1,7 @@
-<mat-toolbar color='primary'>
-  <mat-toolbar-row>
-    <span></span>Freedom Feast<span></span>
-  </mat-toolbar-row>
-</mat-toolbar>
-
 <div class='user-form'>
-  <form [formGroup]='userForm' (ngSubmit)='onSubmit(userForm)' #form="ngForm")>
+  <form [formGroup]="userForm" (ngSubmit)='onSubmit(userForm)' #user="ngForm">
     <h3>User Registration</h3>
-
-    <div>
-      <mat-form-field>
-        <input formControlName='username' placeholder="Username" matInput='text' required>
-      </mat-form-field>
-    </div>
+    
     <div>
       <mat-form-field>
         <input formControlName='email' placeholder="Email" matInput='email' required>
@@ -26,7 +15,7 @@
     </div>
 
     <div>
-      <button mat-raised-button class='submit-button' color='accent' [disabled]="!form.pending || !form.valid">Submit</button>
+      <button mat-raised-button color='accent' [disabled]="!user.pending && !user.valid">Submit</button>
     </div>
   </form>
 </div>

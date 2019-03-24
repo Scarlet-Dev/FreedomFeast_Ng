@@ -24,3 +24,6 @@ $ff-access-warn: mat-palette($mat-amber);
 $ff-access-theme: mat-light-theme($ff-access-primary, $ff-access-accent, $ff-access-warn);
 
 @include angular-material-theme($ff-access-theme);
+@import '~@coachcare/datepicker/theming';
+
+@include mat-datepicker($ff-access-theme);

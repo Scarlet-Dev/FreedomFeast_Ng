@@ -1,3 +1,21 @@
-<p>
-  menu works!
-</p>
+<div>
+  <form (click)='proceedToCart()'>
+    <mat-form-field>
+      <mat-selection-list>
+        <mat-list-option *ngFor='let menu_item of menu;' >
+          <h3 class='Item Name'></h3>
+          <span>
+            <em></em>
+          </span>
+          <span>
+            <h4></h4>
+          </span>
+           
+        </mat-list-option>
+      </mat-selection-list>
+    </mat-form-field>
+    <mat-form-field>
+      <button mat-icon>Proceed to Cart</button>
+    </mat-form-field>
+  </form>
+</div>

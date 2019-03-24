@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FeastFreedomApiService } from "../../../services/feast-freedom-api.service";
+import { Router } from "@angular/router";
+import { FeastFreedomApiService } from "../../../../../services/feast-freedom-api.service";
 
 @Component({
   selector: 'app-card',
@@ -8,10 +9,14 @@ import { FeastFreedomApiService } from "../../../services/feast-freedom-api.serv
 })
 export class CardComponent implements OnInit {
 
-  constructor(private getProvider: FeastFreedomApiService) { }
+  constructor(private router:Router, 
+    private getProvider: FeastFreedomApiService) { }
 
-  providers_list = this.getProvider.Provider.getProviders();
+  providers_list = this.getProvider.getProviders();
   ngOnInit() {
   }
 
+  onSelectProvider(provider_name){
+    this.router.navigate([], provider_name)
+  }
 }

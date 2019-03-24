@@ -1,1 +1,32 @@
-<router-outlet></router-outlet>
+<mat-sidenav-container class="sidenav">
+    <mat-sidenav mode='side' #sidenav>
+        <a mat-button routerLink='settings'>Account Settings</a>
+        <a mat-button routerLink=''>Order History</a>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar color='primary' fxLayout='row'>
+            <mat-toolbar-row fxLayoutAlign='center center'>
+                <div>
+                    <a mat-button class='menu' (click)="sidenav.toggle()">
+                        <mat-icon>menu</mat-icon>
+                    </a>
+                </div>
+                <div><a routerLink="/welcome">
+                        Freedom Feast
+                    </a>
+                </div>
+                <div>
+                    <a mat-button routerLink='shopping-cart'>
+                        <mat-icon matBadgeColor='accent' class='notify-icon' matBadge={{itemCount}}
+                            matBadgePosition='after above'>
+                            shopping_cart
+                        </mat-icon>
+                    </a>
+                </div>
+            </mat-toolbar-row>
+        </mat-toolbar>
+        <main>
+            <router-outlet></router-outlet>
+        </main>
+    </mat-sidenav-content>
+</mat-sidenav-container>

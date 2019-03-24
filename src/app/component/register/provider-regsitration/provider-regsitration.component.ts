@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-// import { FeastFreedomApiService } from '../../../services/feast-freedom-api.service'
+import { FeastFreedomApiService } from '../../../services/feast-freedom-api.service'
 import { Router } from '@angular/router'
 import { FormGroup, FormControl } from '@angular/forms'
 
@@ -7,9 +7,7 @@ import { FormGroup, FormControl } from '@angular/forms'
   selector: 'app-provider-regsitration',
   templateUrl: './provider-regsitration.component.html',
   styleUrls: ['./provider-regsitration.component.css'],
-  // providers: [ 
-  //   FeastFreedomApiService
-  //  ]
+  providers: [FeastFreedomApiService]
 })
 export class ProviderRegsitrationComponent implements OnInit {
   submitted = false;
@@ -48,13 +46,15 @@ export class ProviderRegsitrationComponent implements OnInit {
   });
 
 
-  constructor(private prov_http: Router) { }
+  constructor(private router: Router, private register:FeastFreedomApiService) { }
 
   ngOnInit() {
   }
-  onSubmit() {
-    this.prov_http.navigate([''])
+
+  onSubmit(new_provider) {
+    // this.register.registerProvider(new_provider).subscribe()
+    // this.prov_http.navigate([''])
+    console.log(new_provider)
+    // this.router.navigate([])
   }
-
-
 }

@@ -1,7 +1,7 @@
 <div>
     <mat-card *ngFor="let provide of providers_list;" tabindex="0">
         <mat-card-header>
-            <mat-card-title>{{provide.provider_name}}</mat-card-title>
+            <mat-card-title ngModel #provider_name=ngModel>{{provide.provider_name}}</mat-card-title>
             <mat-card-subtitle>{{provide.provider_type}}</mat-card-subtitle>
             <img mat-card-md-img src={{provide.img}}>
         </mat-card-header>
@@ -13,7 +13,7 @@
           <h4>
             {{provide.date_opened}}<span>|</span>{{provide.time_opened}}
           </h4>
-          <mat-card-actions><button routerLink='[]'>Order from Provider</button></mat-card-actions>
+          <mat-card-actions><button (click)="onSelectProvider(provider_name)">Order from Provider</button></mat-card-actions>
         </mat-card-content>
     </mat-card>
 </div>

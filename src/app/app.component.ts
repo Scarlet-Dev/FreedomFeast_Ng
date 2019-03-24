@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'ff-access';
+  title = 'Freedom Feast';
+  itemCount=0;
   UserButtonTitle = 'Login/Register'
 }

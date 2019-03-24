@@ -5,9 +5,11 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 import { CdkStepperModule } from '@angular/cdk/stepper';
 import { CdkTableModule } from '@angular/cdk/table';
 import { CdkTreeModule } from '@angular/cdk/tree';
+import { FlexModule } from "@angular/flex-layout";
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { MatDatepickerModule, MatMomentDateModule } from '@coachcare/datepicker'
 import { MatFormFieldModule } from "@angular/material/form-field";
 import {
   MatAutocompleteModule,
@@ -18,7 +20,7 @@ import {
   MatCardModule,
   MatCheckboxModule,
   MatChipsModule,
-  MatDatepickerModule,
+  // MatDatepickerModule,
   MatDialogModule,
   MatDividerModule,
   MatExpansionModule,
@@ -89,6 +91,7 @@ import {
     MatTooltipModule,
     MatFormFieldModule,
     MatTreeModule,
+    MatMomentDateModule,
     CdkStepperModule,
     A11yModule,
     DragDropModule,
@@ -98,6 +101,7 @@ import {
     CdkTreeModule,
     FormsModule,
     ReactiveFormsModule,
+    FlexModule
   ]
 })
 export class MaterialLayoutModule { }
