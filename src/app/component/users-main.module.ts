@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UsersMainRoutingModule } from './users-main-routing.module'
 import { MaterialLayoutModule } from '../material-layout/material-layout.module';
-import { ToolbarModule } from './toolbar/toolbar.module';
 
 import { LocalStorageService } from '../services/local-storage.service';
 import { FeastFreedomApiService } from '../services/feast-freedom-api.service';
@@ -18,6 +17,8 @@ import { CheckoutComponent } from './users/user/checkout/checkout.component';
 import { CartComponent } from './users/user/cart/cart.component'
 import { ConfirmationComponent } from './users/user/confirmation/confirmation.component';
 import { UserSettingsComponent } from './users/user/user-settings/user-settings.component';
+import { ProviderSettingsComponent } from './users/kitchen-provider/provider-settings/provider-settings.component';
+import { MenuItemComponent } from './users/kitchen-provider/menu-item/menu-item.component';
 
 
 @NgModule({
@@ -32,12 +33,13 @@ import { UserSettingsComponent } from './users/user/user-settings/user-settings.
     CheckoutComponent,
     ConfirmationComponent,
     KitchenProviderComponent,
+    ProviderSettingsComponent,
+    MenuItemComponent,
   ],
   imports: [
     CommonModule,
     UsersMainRoutingModule,
     MaterialLayoutModule,
-    ToolbarModule
   ],
   exports: [],
   providers: [ LocalStorageService, FeastFreedomApiService]

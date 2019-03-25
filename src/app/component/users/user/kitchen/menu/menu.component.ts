@@ -10,7 +10,7 @@ export class MenuComponent implements OnInit {
 
   constructor(private getMenu: FeastFreedomApiService) { }
 
-  menu = [this.getMenu.getMenuItems().subscribe()]
+  // menu = [this.getMenu.getMenuItems(localStorage).subscribe()]
   
   proceedToCart(){
     

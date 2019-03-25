@@ -1,0 +1,40 @@
+<div>
+  <h3></h3>
+  <button mat-raised-button color='accent'>Create New Item</button>
+</div>
+
+<div>
+  <table mat-table [dataSource]='menu_items' class='mat-elevation-z8'>
+
+    <ng-container matColumnDef="Menu Item Name">
+      <th mat-header-cell *matHeaderCellDef>Menu Item Name</th>
+      <td mat-cell *matCellDef='let menu_items'>{{menu_items.item_name}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Item Type">
+      <th mat-header-cell *matHeaderCellDef>Item Type</th>
+      <td mat-cell *matCellDef="let menu_items">{{menu_items.type}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Description">
+      <th mat-header-cell *matHeaderCellDef>Description</th>
+      <td mat-cell *matCellDef="let menu_items">{{menu_items.description}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Price">
+      <th mat-header-cell *matHeaderCellDef>Price</th>
+      <td mat-cell *matCellDef="let menu_items">${{menu_items.price}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td>
+        <a>Update</a>
+        <a>Delete</a>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

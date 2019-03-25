@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from './app-routing.module';
 import { UsersMainModule } from "./component/users-main.module";
-import { ToolbarModule } from './component/toolbar/toolbar.module';
 import { MaterialLayoutModule } from './material-layout/material-layout.module';
 
 import { FeastFreedomApiService } from './services/feast-freedom-api.service';
@@ -34,7 +33,6 @@ import { ProviderRegsitrationComponent } from './component/register/provider-reg
     UsersMainModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    ToolbarModule,
     MaterialLayoutModule
   ],
   exports: [
