@@ -1,5 +1,5 @@
 import { MatTableDataSource } from "@angular/material";
-import { Component, OnInit, OnChanges, Inject } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { NgForm } from "@angular/forms";
@@ -17,25 +17,19 @@ export interface MenuData {
 })
 
 
-export class MenuItemComponent implements OnInit, OnChanges {
+export class MenuItemComponent implements OnInit {
 
 
   menu_items: MatTableDataSource<any>
   displayedColumns: string[] = ["Menu Item Name", "Item Type", "Description", "Price", "Actions"]
 
   constructor(private menu: FeastFreedomApiService, public dialog: MatDialog) {
-    this.showEditForm = false
-    this.showTable = true
+
     this.showCreateForm = false
   }
 
   public showCreateForm: boolean
-  public showEditForm: boolean
   public showTable: boolean
-
-  ngOnChanges(onChange) {
-
-  }
 
   ngOnInit() {
     this.getMenu()
@@ -70,7 +64,6 @@ export class MenuItemComponent implements OnInit, OnChanges {
       NewMenu.value).subscribe((res) => {
         var newItem = res
         // console.log(res)
-        this.ngOnChanges(newItem)
         this.showCreateForm = false
         this.getMenu()
       })
@@ -87,11 +80,9 @@ export class MenuItemComponent implements OnInit, OnChanges {
       this.updateMenuItem(result)
     })
   } 
-
   updateMenuItem(UpdatedMenu: any) {
-      (MenuItemDialogUpdate)
     return this.menu.updateMenuItem(localStorage.getItem('id'),
-      UpdatedMenu).subscribe((res) => {
+      UpdatedMenu).subscribe(() => {
         this.getMenu()
       })
 
@@ -99,10 +90,22 @@ export class MenuItemComponent implements OnInit, OnChanges {
 
 
 
+  openDeleteDialog(){
+    const deleteDialog = this.dialog.open(MenuItemDialogDelete, {
+      width:'250px;',
+      data:{}
+    })
+
+    deleteDialog.afterClosed().subscribe((result) =>{
+      if(result){
+        this.deleteMenuItem(result)
+      }
+    })
+  }
   deleteMenuItem(DeletedMenu) {
     return this.menu.deleteMenuItem(localStorage.getItem("id"),
-      DeletedMenu).subscribe((res) => {
-
+      DeletedMenu).subscribe(() => {
+        this.getMenu()
       })
   }
 
