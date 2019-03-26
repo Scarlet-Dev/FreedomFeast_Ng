@@ -22,7 +22,7 @@ const UserRoutes: Routes = [
     ]
   },
   {
-    path: 'providers', canActivate: [], component: KitchenProviderComponent, children: [
+    path: 'provider', canActivate: [], component: KitchenProviderComponent, children: [
       { path: 'settings', component: ProviderSettingsComponent},
       // { path: 'order-history' },
     ]

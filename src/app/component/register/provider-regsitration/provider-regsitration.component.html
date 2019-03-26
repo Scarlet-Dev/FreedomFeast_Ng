@@ -1,22 +1,26 @@
-<mat-horizontal-stepper labelPosition='bottom' #stepper>
+<!-- <form [formGroup]='providerForm' #providerForm = "ngForm">
 
-  <mat-step [stepControl]='providerForm' errorMessage="Please fill all fields">
+  <mat-horizontal-stepper labelPosition='bottom' #stepper>
 
-    <form [formGroup]='providerForm' #form=ngForm>
+    <mat-step [stepControl]="providerForm.controls['providerInfo']" errorMessage="Please fill all fields"
+      formGroupName="providerInfo">
+
 
       <ng-template matStepLabel>Basic Information</ng-template>
 
       <h3>Pelase enter your basinc information below</h3>
 
       <mat-form-field>
-        <input name="providerName" matInput='text' required formControlName="providerName" placeholder="Provider Name">
+        <input name="providerName" matInput type='text' required formControlName="providerName" placeholder="Provider Name"
+          ngModel #providerName="ngModel">
         <div *ngIf="submitted && !providerForm.controls.providerName?.valid">
           Provider Name is required
         </div>
       </mat-form-field>
 
       <mat-form-field>
-        <input name='owner_names' matInput='text' required formControlName="ownerNames" placeholder="Owner Name(s)">
+        <input name='ownerNames' matInput type='text' required formControlName="ownerNames" placeholder="Owner Name(s)"
+          ngModel #ownerNames="ngModel">
         <div *ngIf="submitted && !providerForm.controls.ownerNames?.valid">
           <div [hidden]="!providerForm.controls.ownerNames.errors.required">
             Owner Name(s) are required
@@ -25,95 +29,127 @@
       </mat-form-field>
 
       <mat-form-field>
-        <input name='provider_email' matInput type="email" required formControlName="email" placeholder="Email">
+        <input name='email' matInput type="email" required formControlName="email" placeholder="Email" 
+        ngModel #email="ngModel">
       </mat-form-field>
 
       <mat-form-field>
-        <input name='password' matInput type='password' required formControlName="password" placeholder="Password">
+        <input name='password' matInput type='password' required formControlName="password" placeholder="Password"
+          ngModel #password="ngModel">
       </mat-form-field>
 
       <button mat-button matStepperNext type='button'> Next </button>
 
-    </form>
+    </mat-step>
 
-  </mat-step>
+    <mat-step [stepControl]="providerForm.controls['address']" formGroupName='address'>
 
-  <mat-step [stepControl]="addressForm">
-
-    <form [formGroup]='addressForm'>
 
       <ng-template matStepLabel>Business Address</ng-template>
 
       <h3>Please enter your address below</h3>
 
       <mat-form-field>
-        <input name='street' matInput='text' formControlName='street' placeholder="Street Address">
+        <input name='street' matInput type='text' formControlName='street' placeholder="Street Address" ngModel #street="ngModel">
       </mat-form-field>
 
       <mat-form-field>
-        <input name='city' matInput='text' formControlName='city' placeholder="City">
+        <input name='city' matInput type='text' formControlName='city' placeholder="City" ngModel>
       </mat-form-field>
 
       <mat-form-field>
-        <mat-select placeholder='State' formControlName='state'>
+        <mat-select placeholder='State' formControlName='state' ngModel>
           <mat-option *ngFor="let state of states;" [value]='state' required>{{state}}</mat-option>
         </mat-select>
       </mat-form-field>
 
       <mat-form-field>
-        <input name='zip' matInput type='text' formControlName='zip' placeholder="Zip Code">
+        <input name='zip' matInput type='text' formControlName='zip' placeholder="Zip Code" ngModel>
       </mat-form-field>
 
       <button mat-button matStepperPrevious type='button'> Previous </button>
       <button mat-button matStepperNext type='button'> Next </button>
-    </form>
-  </mat-step>
 
-  <mat-step [stepControl]='providerForm'>
-    <form [formGroup]='providerForm' #form=ngForm>
+    </mat-step>
+
+    <mat-step [stepControl]="providerForm.controls['workingDays']" formGroupName='workingDays'>
+
       <ng-template matStepLabel>Date & Time Opened</ng-template>
       <h3>Pelase select the day(s) and times you will be open</h3>
 
 
       <mat-selection-list>
-        <mat-list-option *ngFor="let days of daysOftheWeekGroup" checkboxPosition='before'>
+        <mat-list-option *ngFor="let days of daysOftheWeekGroup" checkboxPosition='before' formControlName="daysOpened"
+          ngModel>
           {{days}}
         </mat-list-option>
       </mat-selection-list>
-      <!-- <mat-checkbox name='Days' formControlName='DoW' *ngFor="let days of daysOftheWeekGroup">
-        {{days}}
-      </mat-checkbox> -->
 
       <mat-form-field>
-        
-        <input matInput id='timeStart' [matDatepicker]="timeStart" placeholder="Time Opened">
+        <input matInput id='timeStart' [matDatepicker]="timeStart" placeholder="Time Opened"
+          formControlName="timeOpened" ngModel>
         <mat-datepicker-toggle matSuffix [for]="timeStart"></mat-datepicker-toggle>
         <mat-datepicker type="time" clockStep='5' #timeStart></mat-datepicker>
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput id='timeEnds' [matDatepicker]="timeEnds" placeholder="Time Closed">
-        <mat-datepicker-toggle matSuffix [for]="timeEnds" ></mat-datepicker-toggle>
+        <input matInput id='timeEnds' [matDatepicker]="timeEnds" placeholder="Time Closed" formControlName="timeClosed"
+          ngModel>
+        <mat-datepicker-toggle matSuffix [for]="timeEnds"></mat-datepicker-toggle>
         <mat-datepicker type="time" clockStep='5' #timeEnds></mat-datepicker>
       </mat-form-field>
 
       <button mat-button matStepperPrevious type='button'> Previous </button>
       <button mat-button matStepperNext type='button'> Next </button>
-    </form>
-  </mat-step>
 
-  <mat-step>
-    <form (click)="onSubmit()">
+    </mat-step>
+
+    <mat-step>
       <ng-template matStepLabel>Confirm</ng-template>
       <h3>Please confirm your information below</h3>
 
-      <button mat-button color='accent'>Submit info</button>
-    </form>
+      <div>
+        <h3>Provider Information</h3>
+        <div>
+          <h5>Provider Name:</h5>
+          <h5>Owner Name(s):</h5>
+          <h5>Provider Email:</h5>
+        </div>
+        <mat-divider></mat-divider>
+      </div>
 
-  </mat-step>
-  <mat-step>
-    <ng-template matStepLabel>Registraion Complete</ng-template>
-    <h3>You have just been registered click the link below to log in and start cooking!</h3>
-    <button routerLink='/login' mat-raised-button color='accent'>Go to Login</button>
-  </mat-step>
-</mat-horizontal-stepper>
+      <div>
+        <h3>Provider Address</h3>
+        <h5>Street :</h5>
+        <p></p>
+        <h5>City:</h5>
+        <p></p>
+        <h5>State:</h5>
+        <p></p>
+        <h5>Zip Code:</h5>
+        <p></p>
+        <mat-divider></mat-divider>
+      </div>
+
+      <div>
+        <h3>Days and Times Opened</h3>
+        <h5>Days Opened</h5>
+        <p></p>
+        <h5>Times Opened</h5>
+        <p></p>
+      </div>
+      <button mat-button matStepperPrevious type="button">Previous</button>
+      <button mat-button color='accent'>Submit info</button>
+
+    </mat-step>
+
+    <mat-step>
+
+      <ng-template matStepLabel>Registraion Complete</ng-template>
+      <h3>You have just been registered. Click the link below to start planning your menu!</h3>
+      <button routerLink='/users/provider' mat-raised-button color='accent'>Go to Login</button>
+
+    </mat-step>
+
+  </mat-horizontal-stepper>
+</form> -->

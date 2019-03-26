@@ -1,12 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'Freedom Feast';
-  itemCount=0;
-  UserButtonTitle = 'Login/Register'
+  itemCount = 0;
+
+  constructor(private router: Router) { 
+  }
+
+  ngOnInit() {
+  }
+
+  showButton:boolean
+
+  logOut() {
+      localStorage.clear()
+      this.router.navigateByUrl('/')
+  }
 }

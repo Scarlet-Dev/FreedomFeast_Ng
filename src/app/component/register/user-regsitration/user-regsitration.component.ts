@@ -10,7 +10,6 @@ import { FeastFreedomApiService } from 'src/app/services/feast-freedom-api.servi
   providers:[FeastFreedomApiService]
 })
 export class UserRegsitrationComponent implements OnInit {
-  serviceTest: any = [];
   submitted = false;
 
   userForm = new FormGroup({
@@ -19,15 +18,15 @@ export class UserRegsitrationComponent implements OnInit {
     password: new FormControl()
   });
 
-  constructor(private user_route: Router, private register:FeastFreedomApiService) { }
+  constructor(private user: Router, private register:FeastFreedomApiService) { }
 
   ngOnInit() {
   }
 
   onSubmit(user) {
-      this.register.registerUser(user)
-    // const value = user.value;
-    // console.log(value);
-    // this.user_route.navigateByUrl('login');
+      return this.register.registerUser(user.value).subscribe((res:any) =>{
+        this.user.navigateByUrl("/login")
+      })
+    
   }
 }

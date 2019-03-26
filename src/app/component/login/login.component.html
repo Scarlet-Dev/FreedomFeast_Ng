@@ -1,5 +1,5 @@
 <div>
-  <form class='log-in' (ngSubmit)="onSubmit(Login)" #Login="ngForm">
+  <form class='log-in' (ngSubmit)="onSubmit(Login, providerLogin)" #Login="ngForm">
     <div class='container'>
       <h2>Log In</h2>
       <div class='username'>
@@ -21,13 +21,13 @@
       </div>
 
       <div class='checkbox'>
-        <mat-checkbox name='providerLogin' ngModel #providerLogin='ngModel'>
+        <mat-checkbox name='providerLogin' ngModel #providerLogin>
           Login as a Kitchen Provider?
         </mat-checkbox>
       </div>
 
       <div class='login-button'>
-        <button mat-stroked-button color='accent' isRoundButton=true [disabled]='!f.valid'>Log In</button>
+        <button mat-stroked-button color='accent' isRoundButton=true [disabled]='!Login.valid'>Log In</button>
       </div>
     </div>
   </form>
