@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
         }
         else {
           this.storeToken(res)
-          this.router.navigateByUrl('users/user/kitchen')
+          this.router.navigateByUrl('users/user/')
         }
       })
     }

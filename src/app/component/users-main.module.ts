@@ -7,7 +7,6 @@ import { LocalStorageService } from '../services/local-storage.service';
 import { FeastFreedomApiService } from '../services/feast-freedom-api.service';
 
 import { UsersMainComponent } from "./users-main.component";
-import { KitchenProviderComponent } from './users/kitchen-provider/kitchen-provider.component';
 
 import { UserComponent } from './users/user/user.component';
 import { CardComponent } from './users/user/kitchen/card/card.component';
@@ -17,8 +16,10 @@ import { CheckoutComponent } from './users/user/checkout/checkout.component';
 import { CartComponent } from './users/user/cart/cart.component'
 import { ConfirmationComponent } from './users/user/confirmation/confirmation.component';
 import { UserSettingsComponent } from './users/user/user-settings/user-settings.component';
+
+import { KitchenProviderComponent } from './users/kitchen-provider/kitchen-provider.component';
 import { ProviderSettingsComponent } from './users/kitchen-provider/provider-settings/provider-settings.component';
-import { MenuItemComponent } from './users/kitchen-provider/menu-item/menu-item.component';
+import { MenuItemComponent, MenuItemDialogDelete, MenuItemDialogUpdate } from './users/kitchen-provider/menu-item/menu-item.component';
 
 
 @NgModule({
@@ -35,6 +36,12 @@ import { MenuItemComponent } from './users/kitchen-provider/menu-item/menu-item.
     KitchenProviderComponent,
     ProviderSettingsComponent,
     MenuItemComponent,
+    MenuItemDialogUpdate,
+    MenuItemDialogDelete,
+  ],
+  entryComponents:[
+    MenuItemDialogUpdate,
+    MenuItemDialogDelete
   ],
   imports: [
     CommonModule,

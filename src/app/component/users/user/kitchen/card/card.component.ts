@@ -10,13 +10,22 @@ import { FeastFreedomApiService } from "../../../../../services/feast-freedom-ap
 export class CardComponent implements OnInit {
 
   constructor(private router:Router, 
-    private getProvider: FeastFreedomApiService) { }
+    private provider: FeastFreedomApiService) { }
 
-  providers_list = this.getProvider.getProviders();
-  ngOnInit() {
+  providers_list;
+
+  getProviders(){
+    this.provider.getProviders().subscribe((res:any) =>{
+      this.providers_list = res
+      console.log(this.providers_list)
+    })
   }
 
-  onSelectProvider(provider_name){
-    this.router.navigate([], provider_name)
+  goToMenu(){
+    this.router.navigateByUrl("menu")
+  }
+
+  ngOnInit() {
+    this.getProviders()
   }
 }

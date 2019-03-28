@@ -1,21 +1,36 @@
-<div>
-  <form (click)='proceedToCart()'>
-    <mat-form-field>
-      <mat-selection-list>
-        <mat-list-option *ngFor='let menu_item of menu;' >
-          <h3 class='Item Name'></h3>
-          <span>
-            <em></em>
-          </span>
-          <span>
-            <h4></h4>
-          </span>
-           
-        </mat-list-option>
-      </mat-selection-list>
-    </mat-form-field>
-    <mat-form-field>
-      <button mat-icon>Proceed to Cart</button>
-    </mat-form-field>
-  </form>
-</div>
+
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Personal data
+        </mat-panel-title>
+        <mat-panel-description>
+          Type your name and age
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <mat-form-field>
+        <input matInput placeholder="First name">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Age">
+      </mat-form-field>
+    </mat-expansion-panel>
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Self aware panel
+        </mat-panel-title>
+        <mat-panel-description>
+          Currently I am {{panelOpenState ? 'open' : 'closed'}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>I'm visible because I am open</p>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+
+  <p>Number of item selected: {{items.selectedOptions.selected.length}}</p>
+  <button mat-raised-button color='accent'>Proceed to Cart</button>

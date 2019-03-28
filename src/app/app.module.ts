@@ -7,7 +7,7 @@ import { UsersMainModule } from "./component/users-main.module";
 import { MaterialLayoutModule } from './material-layout/material-layout.module';
 
 import { FeastFreedomApiService } from './services/feast-freedom-api.service';
-import { LocalStorageService } from './services/local-storage.service'
+import { BadgeCounterService } from './services/badge-counter.service';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './component/login/login.component';
@@ -38,7 +38,7 @@ import { ProviderRegsitrationComponent } from './component/register/provider-reg
   exports: [
     BrowserModule,
   ],
-  providers: [FeastFreedomApiService, LocalStorageService],
+  providers: [FeastFreedomApiService, BadgeCounterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

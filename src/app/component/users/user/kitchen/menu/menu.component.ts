@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FeastFreedomApiService } from '../../../../../services/feast-freedom-api.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'menu-list',
@@ -8,14 +9,25 @@ import { FeastFreedomApiService } from '../../../../../services/feast-freedom-ap
 })
 export class MenuComponent implements OnInit {
 
-  constructor(private getMenu: FeastFreedomApiService) { }
+  constructor(private menu: FeastFreedomApiService, private router: Router,
+    private activatedRoute: ActivatedRoute) { }
 
-  // menu = [this.getMenu.getMenuItems(localStorage).subscribe()]
-  
-  proceedToCart(){
-    
+  menuList
+  proceedToCart() {
+
   }
   ngOnInit() {
+    // this.getMenu()
   }
+
+  // getMenu() {
+  //   this.activatedRoute.params.subscribe(params => {
+  //     console.log(params)
+  //     return this.menu.getMenuItems(params).subscribe((res) => {
+  //       this.menuList = res
+  //     })
+
+  //   })
+  // }
 
 }

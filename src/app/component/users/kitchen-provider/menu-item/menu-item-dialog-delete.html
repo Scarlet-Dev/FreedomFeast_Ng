@@ -1,11 +1,11 @@
-<h1 mat-dialog-title>Hi {{data.name}}</h1>
+<h1 mat-dialog-title>Are you sure you want to delete : <em>{{data.name}}</em></h1>
 <div mat-dialog-content>
-  <p>What's your favorite animal?</p>
-  <mat-form-field>
-    <input matInput [(ngModel)]="data.animal">
-  </mat-form-field>
+    <h4>Item Name: </h4>{{data.name}}
+    <h4>Item Type: </h4>{{data.type}}
+    <h4>Item Description: </h4>{{data.description}}
+    <h4>Item Price: </h4>{{data.price}}
 </div>
 <div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">No Thanks</button>
-  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button>
+    <button mat-button [mat-dialog-close]="data" color='warn'>Ok</button>
+  <button mat-button (click)="onNoClickForDelete()">Cancel</button>
 </div>

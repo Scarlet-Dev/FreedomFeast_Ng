@@ -1,34 +1,40 @@
-<div>
-  <form class='log-in' (ngSubmit)="onSubmit(Login, providerLogin)" #Login="ngForm">
-    <div class='container'>
-      <h2>Log In</h2>
-      <div class='username'>
-        <mat-form-field>
-          <input matInput type="email" name='email' required email placeholder="Email" ngModel #email='ngModel'>
-        </mat-form-field>
-        <mat-error class='email-hint' *ngIf='!email.valid && email.touched'>
-          Please enter a valid email address
-        </mat-error>
-      </div>
+<mat-card>
+    <mat-card-header>Login</mat-card-header>
+    <mat-card-content>
+        <form class='log-in' (ngSubmit)="onSubmit(Login, providerLogin)" #Login="ngForm">
+            <div class='container'>
+                <div class='username'>
+                    <mat-form-field>
+                        <input matInput type="email" name='email' required email placeholder="Email" ngModel
+                            #email='ngModel'>
+                    </mat-form-field>
+                    <mat-error class='email-hint' *ngIf='!email.valid && email.touched'>
+                        Please enter a valid email address
+                    </mat-error>
+                </div>
 
-      <div class='password'>
-        <mat-form-field>
-          <input matInput type='password' name='password' required placeholder="Password" ngModel #password='ngModel'>
-        </mat-form-field>
-        <mat-error *ngIf="!password.valid && password.touched">
-          Please enter a valid password
-        </mat-error>
-      </div>
+                <div class='password'>
+                    <mat-form-field>
+                        <input matInput type='password' name='password' required placeholder="Password" ngModel
+                            #password='ngModel'>
+                    </mat-form-field>
+                    <mat-error *ngIf="!password.valid && password.touched">
+                        Please enter a valid password
+                    </mat-error>
+                </div>
+            </div>
+            <div class='checkbox'>
+                <mat-checkbox name='providerLogin' ngModel #providerLogin>
+                    Login as a Kitchen Provider?
+                </mat-checkbox>
+            </div>
 
-      <div class='checkbox'>
-        <mat-checkbox name='providerLogin' ngModel #providerLogin>
-          Login as a Kitchen Provider?
-        </mat-checkbox>
-      </div>
-
-      <div class='login-button'>
-        <button mat-stroked-button color='accent' isRoundButton=true [disabled]='!Login.valid'>Log In</button>
-      </div>
-    </div>
-  </form>
-</div>
+            <mat-card-actions>
+                <div class='login-button'>
+                    <button mat-stroked-button color='accent' isRoundButton=true [disabled]='!Login.valid'>Log
+                        In</button>
+                </div>
+            </mat-card-actions>
+        </form>
+    </mat-card-content>
+</mat-card>

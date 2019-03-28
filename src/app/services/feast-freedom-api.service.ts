@@ -56,9 +56,6 @@ export class FeastFreedomApiService {
   getMenuItems(provider_id) {
     return this.http.get(ApiUrl + 'provider/menu?id=' + provider_id)
   }
-  getMenuItem(provider_id) {
-    return this.http.get(ApiUrl + 'provider/menu?id=', provider_id)
-  }
   newMenuItem(provider_id, menu_item) {
     return this.http.post(ApiUrl + 'provider/menu?id=' + provider_id, menu_item)
   }

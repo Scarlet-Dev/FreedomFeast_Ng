@@ -7,7 +7,11 @@ import { NgForm } from "@angular/forms";
 import { FeastFreedomApiService } from "../../../../services/feast-freedom-api.service";
 
 export interface MenuData {
-
+  _id: String,
+  name: String,
+  type: String,
+  description: String,
+  price: String
 }
 
 @Component({
@@ -19,6 +23,11 @@ export interface MenuData {
 
 export class MenuItemComponent implements OnInit {
 
+  _id: String;
+  name: String;
+  type: String;
+  description: String;
+  price: String;
 
   menu_items: MatTableDataSource<any>
   displayedColumns: string[] = ["Menu Item Name", "Item Type", "Description", "Price", "Actions"]
@@ -62,7 +71,7 @@ export class MenuItemComponent implements OnInit {
     // console.log(NewMenu)
     return this.menu.newMenuItem(localStorage.getItem("id"),
       NewMenu.value).subscribe((res) => {
-        var newItem = res
+        // var newItem = res
         // console.log(res)
         this.showCreateForm = false
         this.getMenu()
@@ -70,16 +79,19 @@ export class MenuItemComponent implements OnInit {
   }
 
 
-  openUpdateDialog(){
+  openUpdateDialog(row_data) {
     const updateDialog = this.dialog.open(MenuItemDialogUpdate, {
-      width:'250px;',
-      data: {}
+      width: 'auto',
+      height: 'fit-content',
+      data: row_data
     })
-
-    updateDialog.afterClosed().subscribe((result) =>{
-      this.updateMenuItem(result)
+    updateDialog.afterClosed().subscribe((result) => {
+      if (result) {
+        console.log(result)
+        this.updateMenuItem(result)
+      }
     })
-  } 
+  }
   updateMenuItem(UpdatedMenu: any) {
     return this.menu.updateMenuItem(localStorage.getItem('id'),
       UpdatedMenu).subscribe(() => {
@@ -90,16 +102,16 @@ export class MenuItemComponent implements OnInit {
 
 
 
-  openDeleteDialog(){
+  openDeleteDialog(row_data) {
     const deleteDialog = this.dialog.open(MenuItemDialogDelete, {
-      width:'250px;',
-      data:{}
+      width: '250px',
+      height:'',
+      data: row_data
     })
 
-    deleteDialog.afterClosed().subscribe((result) =>{
-      if(result){
-        this.deleteMenuItem(result)
-      }
+    deleteDialog.afterClosed().subscribe((result) => {
+      console.log(result)
+      this.deleteMenuItem(result)
     })
   }
   deleteMenuItem(DeletedMenu) {
@@ -119,9 +131,9 @@ export class MenuItemComponent implements OnInit {
 export class MenuItemDialogUpdate {
 
   constructor(public menuDialogRef: MatDialogRef<MenuItemDialogUpdate>,
-    @Inject(MAT_DIALOG_DATA) public data: MenuData) { }
+    @Inject(MAT_DIALOG_DATA) public data: any) { }
 
-  onClickForUpdate(): void {
+  onNoClickForUpdate(): void {
     this.menuDialogRef.close()
   }
 }
@@ -135,9 +147,9 @@ export class MenuItemDialogDelete {
 
   constructor(
     public menuDialogRef: MatDialogRef<MenuItemDialogDelete>,
-    @Inject(MAT_DIALOG_DATA) public data: MenuData) { }
+    @Inject(MAT_DIALOG_DATA) public data: any) { }
 
-  onClickForDelete(): void {
+  onNoClickForDelete(): void {
     this.menuDialogRef.close()
   }
 }
