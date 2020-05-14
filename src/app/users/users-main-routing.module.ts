@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { UserComponent } from './users/user/user.component';
-import { MenuComponent } from "./users/user/kitchen/menu/menu.component";
-import { KitchenComponent } from './users/user/kitchen/kitchen.component';
-import { CartComponent } from "./users/user/cart/cart.component";
-import { CheckoutComponent } from "./users/user/checkout/checkout.component";
-import { UserSettingsComponent } from './users/user/user-settings/user-settings.component';
-import { ConfirmationComponent } from './users/user/confirmation/confirmation.component';
+import { UserComponent } from './user/user.component';
+import { MenuComponent } from "./user/kitchen/menu/menu.component";
+import { KitchenComponent } from './user/kitchen/kitchen.component';
+import { CartComponent } from "./user/cart/cart.component";
+import { CheckoutComponent } from "./user/checkout/checkout.component";
+import { UserSettingsComponent } from './user/user-settings/user-settings.component';
+import { ConfirmationComponent } from './user/confirmation/confirmation.component';
 
-import { KitchenProviderComponent } from './users/kitchen-provider/kitchen-provider.component';
-import { ProviderSettingsComponent } from './users/kitchen-provider/provider-settings/provider-settings.component';
+import { KitchenProviderComponent } from './kitchen-provider/kitchen-provider.component';
+import { ProviderSettingsComponent } from './kitchen-provider/provider-settings/provider-settings.component';
 
 const UserRoutes: Routes = [
   {

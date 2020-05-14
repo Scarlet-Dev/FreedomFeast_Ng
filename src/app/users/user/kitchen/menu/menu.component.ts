@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FeastFreedomApiService } from '../../../../../services/feast-freedom-api.service';
+import { FeastFreedomApiService } from ';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({

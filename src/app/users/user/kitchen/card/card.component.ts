@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
-import { FeastFreedomApiService } from "../../../../../services/feast-freedom-api.service";
+import { FeastFreedomApiService } from "../../../../../shared/material-layout/services/feast-freedom-api.service";
 
 @Component({
   selector: 'app-card',
