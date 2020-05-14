@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'
-import { BadgeCounterService } from './services/badge-counter.service';
+import { BadgeCounterService } from './shared/services/badge-counter.service';
 
 @Component({
   selector: 'app-root',

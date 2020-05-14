@@ -3,19 +3,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from './app-routing.module';
-import { UsersMainModule } from "./component/users-main.module";
-import { MaterialLayoutModule } from './material-layout/material-layout.module';
+import { UsersMainModule } from "./users/users-main.module";
+import { MaterialLayoutModule } from './shared/material-layout/material-layout.module';
 
-import { FeastFreedomApiService } from './services/feast-freedom-api.service';
-import { BadgeCounterService } from './services/badge-counter.service';
+import { FeastFreedomApiService } from './shared/services/feast-freedom-api.service';
+import { BadgeCounterService } from './shared//services/badge-counter.service';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './component/login/login.component';
-import { PageNotFoundComponent } from './component/page-not-found/page-not-found.component';
-import { WelcomeComponent } from './component/welcome/welcome.component';
-import { RegisterComponent } from './component/register/register.component';
-import { UserRegsitrationComponent } from './component/register/user-regsitration/user-regsitration.component';
-import { ProviderRegsitrationComponent } from './component/register/provider-regsitration/provider-regsitration.component';
+import { LoginComponent } from './login/login.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { RegisterComponent } from './register/register.component';
+import { UserRegsitrationComponent } from './register/user-regsitration/user-regsitration.component';
+import { ProviderRegsitrationComponent } from './register/provider-regsitration/provider-regsitration.component';
 
 @NgModule({
   declarations: [
