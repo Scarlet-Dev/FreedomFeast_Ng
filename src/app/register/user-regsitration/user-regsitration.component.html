@@ -1,0 +1,21 @@
+<div class='user-form'>
+  <form [formGroup]="userForm" (ngSubmit)='onSubmit(userForm)' #user="ngForm">
+    <h3>User Registration</h3>
+    
+    <div>
+      <mat-form-field>
+        <input formControlName='email' placeholder="Email" matInput='email' required>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field>
+        <input formControlName='password' placeholder="Password" matInput="password" type="password" required>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <button mat-raised-button color='accent' [disabled]="!user.pending && !user.valid">Submit</button>
+    </div>
+  </form>
+</div>

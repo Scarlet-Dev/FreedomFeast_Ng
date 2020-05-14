@@ -1,0 +1,28 @@
+span{
+    width: 100%;
+}
+.user-form{
+    border: black solid 1px;
+    background-color: #fbfbfb;
+    width: fit-content;
+    height: auto;
+    padding-top: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 20px;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    position: relative;
+    border-radius: 10px
+}
+h3{
+    border-bottom: black solid 1px;
+    border-radius: 15px;
+    text-align: center;
+    background-color: #ffffff;
+}
+.submit-button{
+    position: inherit;
+    margin: auto;
+}

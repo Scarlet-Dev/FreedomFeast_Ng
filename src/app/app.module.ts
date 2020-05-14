@@ -1,41 +1,44 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'
-
+import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from './app-routing.module';
-import { UsersModule } from './component/users.module';
+import { UsersMainModule } from "./users/users-main.module";
+import { MaterialLayoutModule } from './shared/material-layout/material-layout.module';
+
+import { FeastFreedomApiService } from './shared/services/feast-freedom-api.service';
+import { BadgeCounterService } from './shared//services/badge-counter.service';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './component/login/login.component';
-import { RegisterComponent } from './component/register/register.component';
-import { PageNotFoundComponent } from './component/page-not-found/page-not-found.component';
-import { WelcomeComponent } from './component/welcome/welcome.component';
-import { HeaderComponent } from './component/header/header.component';
-import { FooterComponent } from './component/footer/footer.component';
+import { LoginComponent } from './login/login.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { RegisterComponent } from './register/register.component';
+import { UserRegsitrationComponent } from './register/user-regsitration/user-regsitration.component';
+import { ProviderRegsitrationComponent } from './register/provider-regsitration/provider-regsitration.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent,
     WelcomeComponent,
     PageNotFoundComponent,
-    HeaderComponent,
-    FooterComponent
+    RegisterComponent,
+    UserRegsitrationComponent,
+    ProviderRegsitrationComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    UsersModule,
+    UsersMainModule,
     BrowserAnimationsModule,
-    FormsModule,
-    ReactiveFormsModule
+    HttpClientModule,
+    MaterialLayoutModule
   ],
-  exports:[
-    BrowserModule
+  exports: [
+    BrowserModule,
   ],
-  providers: [],
+  providers: [FeastFreedomApiService, BadgeCounterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,35 @@
+<h1 mat-dialog-title>Editing Menu Item: <em>{{data.name}}</em></h1>
+<div mat-dialog-content>
+  <p>Please enter your updated item info below</p>
+<!-- 
+
+  <p>{{data.name}}</p>
+
+  <p>{{data.type}}</p>
+
+  <p>{{data.description}}</p>
+
+  <p>{{data.price}}</p> -->
+
+  <mat-form-field>
+    <input name="name" placeholder="Item Name" matInput type="text" [(ngModel)]="data.name" value={{data.name}}>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input name="type" placeholder="Item Type"matInput type="text" [(ngModel)]="data.type" value={{data.type}}>
+  </mat-form-field>
+
+  <mat-form-field>
+    <textarea name="type" placeholder="Item Description" matInput type="text" [(ngModel)]="data.description" value={{data.description}}>
+    </textarea>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input name="price" placeholder="Item Price" matInput type="text" [(ngModel)]="data.price" value={{data.price}}>
+  </mat-form-field>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-raised-button [mat-dialog-close]="data" color='accent'>Ok</button>
+  <button mat-button (click)="onNoClickForUpdate()">Cancel</button>
+</div>
