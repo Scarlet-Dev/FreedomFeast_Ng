@@ -4,10 +4,10 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from './app-routing.module';
 import { UsersMainModule } from "./users/users-main.module";
-import { MaterialLayoutModule } from './shared/material-layout/material-layout.module';
+import { MaterialLayoutModule } from '@app/shared/material-layout/material-layout.module';
 
-import { FeastFreedomApiService } from './shared/services/feast-freedom-api.service';
-import { BadgeCounterService } from './shared//services/badge-counter.service';
+import { FeastFreedomApiService } from '@app/shared/services/feast-freedom-api.service';
+import { BadgeCounterService } from '@app/shared//services/badge-counter.service';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';

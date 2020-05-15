@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FeastFreedomApiService } from ';
 import { ActivatedRoute, Router } from '@angular/router';
+import { FeastFreedomApiService } from '@app/shared/services/feast-freedom-api.service';
 
 @Component({
   selector: 'menu-list',

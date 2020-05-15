@@ -4,7 +4,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { NgForm } from "@angular/forms";
 
-import { FeastFreedomApiService } from "../../../../shared/material-layout/services/feast-freedom-api.service";
+import { FeastFreedomApiService } from "@app/shared/services/feast-freedom-api.service";
 
 export interface MenuData {
   _id: String,

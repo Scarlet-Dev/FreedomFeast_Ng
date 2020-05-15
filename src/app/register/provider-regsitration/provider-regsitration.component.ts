@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FeastFreedomApiService } from '../../../shared/material-layout/services/feast-freedom-api.service'
+import { FeastFreedomApiService } from '@app/shared/services/feast-freedom-api.service'
 import { Router } from '@angular/router'
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms'
 

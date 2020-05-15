@@ -3,11 +3,11 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, BehaviorSubject } from "rxjs";
 import { tap } from 'rxjs/operators'
 
-import { User } from "../models/auth/user";
-import { Provider } from "../models/auth/provider"
-import { JwtResponse } from "../models/auth/jwt-response";
+import { User } from "@app/models/auth/user";
+import { Provider } from "@app/models/auth/provider";
+import { JwtResponse } from "@app/models/auth/jwt-response";
 
-import { environment } from '../../environments/environment'
+import { environment } from "@env/environment";
 
 const ApiUrl = environment.apiUrl;
 

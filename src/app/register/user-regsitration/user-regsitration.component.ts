@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, NgForm } from '@angular/forms'
 import { Router } from '@angular/router'
-import { FeastFreedomApiService } from 'src/app/shared/material-layout/services/feast-freedom-api.service';
+import { FeastFreedomApiService } from '@app/shared/services/feast-freedom-api.service';
 
 @Component({
   selector: 'app-user-regsitration',

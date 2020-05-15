@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UsersMainRoutingModule } from './users-main-routing.module'
-import { MaterialLayoutModule } from '../shared/material-layout/material-layout.module';
+import { MaterialLayoutModule } from '@app/shared/material-layout/material-layout.module';
 
-import { LocalStorageService } from '../shared/services/local-storage.service';
-import { FeastFreedomApiService } from '../shared/services/feast-freedom-api.service';
+import { LocalStorageService } from '@app/shared/services/local-storage.service';
+import { FeastFreedomApiService } from '@app/shared/services/feast-freedom-api.service';
 
 import { UsersMainComponent } from "./users-main.component";
 
