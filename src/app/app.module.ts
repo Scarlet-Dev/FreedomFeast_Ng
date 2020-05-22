@@ -16,6 +16,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { RegisterComponent } from './register/register.component';
 import { UserRegsitrationComponent } from './register/user-regsitration/user-regsitration.component';
 import { ProviderRegsitrationComponent } from './register/provider-regsitration/provider-regsitration.component';
+import { SelectComponentComponent } from './shared/components/select-component/select-component.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ProviderRegsitrationComponent } from './register/provider-regsitration/
     RegisterComponent,
     UserRegsitrationComponent,
     ProviderRegsitrationComponent,
+    SelectComponentComponent,
   ],
   imports: [
     BrowserModule,
